@@ -1,0 +1,38 @@
+{{ define "crenote"}}
+{{ template "header"}}
+	<main>
+		<section>
+			<h2>Welcome to Note Taking App</h2>
+			<p>Create, manage, and organize your notes easily with our simple and intuitive note-taking app.</p>
+			<div class="button-group">
+				<button class="button" onclick="showCreateNoteForm()">Create Note</button>
+			</div>
+		</section>
+	</main>
+		<!-- create note form -->
+		<div class="overlay" id="createNoteOverlay">
+			<div class="modal">
+				<form action="/save_note" method="post">
+					<h2>Create Note</h2>
+					
+					<label for="noteTitle">Title:</label>
+					<input type="text" id="noteTitle" name="noteTitle">
+
+					<label for="noteContent">Content:</label>
+					<textarea id="noteContent" name="noteContent"></textarea>
+					
+					<div class="button-group">
+						<button type="submit" class="button">Create</button>
+						<!-- <button class="btn btn-warning">Create</button> -->
+						<button type="button" class="button" onclick="hideCreateNoteForm()">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+	</html>
+	{{ template "footer"}}
+	{{ end }}
+	
+
+

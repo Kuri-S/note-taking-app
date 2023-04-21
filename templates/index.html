@@ -1,0 +1,15 @@
+{{ define "index"}}
+{{ template "header"}}
+	<main>
+		<section>
+			<h2>Welcome to Note Taking App</h2>
+			<p>Note Taking App is a simple and intuitive note-taking application built with Golang and MongoDB. With Note Taking App, you can easily create, edit, and organize your 
+notes.</p>
+			<p>To get started, create an account or log in to an existing account.</p>
+			<button onclick="location.href='/register '">Create an Account</button>
+			<button onclick="location.href='/login '">Log In</button>
+		</section>
+	</main>
+	{{ template "footer"}}
+	{{ end }}
+

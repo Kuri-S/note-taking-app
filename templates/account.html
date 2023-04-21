@@ -1,0 +1,39 @@
+{{ define "account"}}
+{{ template "header"}}
+    <body>
+        <h1>Account Settings</h1>
+
+        <h2>Change Email</h2>
+        <form method="post" action="/change-email">
+            <label for="new-email">New Email:</label>
+            <input type="email" id="new-email" name="new-email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+        <h2>Change Password</h2>
+        <form method="post" action="/change-password">
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <br>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+
+        <h2>Delete Account</h2>
+        <form method="post" action="/delete-account">
+            <p>Are you sure you want to delete your account? This action is irreversible.</p>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <br>
+            <input type="submit" value="Delete Account">
+        </form>
+
+    </body>
+    </html>
+{{ template "footer"}}
+{{ end }}

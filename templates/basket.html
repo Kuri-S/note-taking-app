@@ -1,0 +1,46 @@
+{{ define "basket"}}
+{{ template "header"}}
+<body>
+	<h1>Note Basket</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Content</th>
+				<th>Added Date</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{range .}}
+			<tr>
+				<td>{{.Title}}</td>
+				<td>{{.Content}}</td>
+				<td>{{.AddedDate}}</td>
+				<td>
+					<form method="POST" action="/basket/{{.ID}}?_method=DELETE">
+						<button type="submit">Delete</button>
+					</form>
+				</td>
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
+</body>
+<!-- <body>
+  <div style="text-align: center;"> 
+    <ul>
+	{{ range .}}
+	<li>
+	  <h2>{{.Title }}</h2>
+	  <h2>{{.Content}}</h2>
+	  <h2>{{ .DateAdded.Format "Jan 2, 2006" }}</h2>
+	</li>
+	{{ else }}
+	<h1>Your basket is empty</h1>
+	{{end}}
+    </ul> 
+  </div>
+</body> -->
+{{ template "footer" }}
+{{ end }}

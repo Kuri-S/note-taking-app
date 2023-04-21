@@ -1,0 +1,18 @@
+{{ define "notes"}}
+{{ template "header"}}
+<body>
+  <div style="text-align: center;"> <!-- adding center alignment to the container div -->
+    <ul>
+      {{range .}}
+      <li>
+        <h2>{{.Title}}</h2>
+        <li><a href="/note/{{ .ID }}">Note</a></li>
+      </li>
+      {{ else }}
+      <h1>Notes := nul</h1>
+      {{end}}
+    </ul>
+  </div>
+</body>
+{{ template "footer"}}
+{{ end }} 

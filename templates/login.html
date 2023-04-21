@@ -1,0 +1,21 @@
+{{ define "login" }}
+{{ template "header" }}
+<main>
+	<section>
+		<h2>Log in to Your Account</h2>
+		<form action="/loginuser" method="post">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+
+			<button type="submit">Log in</button>
+		</form>
+		<p>Log In with e-mail <a href="/magic-login ">e-mail</a></p>
+		<p>Don't have an account? <a href="/register ">Register</a></p>
+	</section>
+</main>
+
+{{ template "footer" }}
+{{ end }}

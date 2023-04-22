@@ -1059,7 +1059,7 @@ func handleFunc(){
     http.Handle("/", rtr)
     fs := http.FileServer(http.Dir("static"))
     http.Handle("/static/", http.StripPrefix("/static/", fs))
-	http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":8080", nil)
 }
 
 func main(){

@@ -151,7 +151,7 @@ func basketHandler(w http.ResponseWriter, r *http.Request) {
    }
 
     // Render template with notes
-    tmpl, err := template.ParseFiles("../templates/basket.html", "../templates/header.html", "../templates/footer.html")
+    tmpl, err := template.ParseFiles("templates/basket.html", "templates/header.html", "templates/footer.html")
     if err != nil {
         http.Error(w, err.Error(), http.StatusInternalServerError)
         return
@@ -566,7 +566,7 @@ func sendMagicLoginEmail(email, token string) error {
 }
 */
 func email_login_page(w http.ResponseWriter, r *http.Request){
-	tmpl, err := template.ParseFiles("../templates/email_login.html")
+	tmpl, err := template.ParseFiles("templates/email_login.html")
 
 	if err != nil{
 		panic(err)
@@ -577,7 +577,7 @@ func email_login_page(w http.ResponseWriter, r *http.Request){
 }
 
 func account_page(w http.ResponseWriter, r *http.Request){
-	tmpl, err := template.ParseFiles("../templates/account.html", "../templates/header.html", "../templates/footer.html")
+	tmpl, err := template.ParseFiles("templates/account.html", "templates/header.html", "templates/footer.html")
 
 	if err != nil{
 		panic(err)
@@ -777,7 +777,7 @@ func index_page(w http.ResponseWriter, r *http.Request){
     }
     if auth, ok := session.Values["authenticated"].(bool); !ok || !auth {
 
-    tmpl, err := template.ParseFiles("../templates/index.html", "../templates/header.html", "../templates/footer.html" )
+    tmpl, err := template.ParseFiles("templates/index.html", "templates/header.html", "templates/footer.html" )
 
 	if err != nil{
 		panic(err)
@@ -792,7 +792,7 @@ func index_page(w http.ResponseWriter, r *http.Request){
 }
 
 func register_page(w http.ResponseWriter, r *http.Request){
-	tmpl, err := template.ParseFiles("../templates/register.html", "../templates/header.html", "../templates/footer.html" )
+	tmpl, err := template.ParseFiles("templates/register.html", "templates/header.html", "templates/footer.html" )
 
 	if err != nil{
 		panic(err)
@@ -802,7 +802,7 @@ func register_page(w http.ResponseWriter, r *http.Request){
 }
 
 func login_page(w http.ResponseWriter, r *http.Request){
-	tmpl, err := template.ParseFiles("../templates/login.html", "../templates/header.html", "../templates/footer.html" )
+	tmpl, err := template.ParseFiles("templates/login.html", "templates/header.html", "templates/footer.html" )
 
 	if err != nil{
 		panic(err)
@@ -812,7 +812,7 @@ func login_page(w http.ResponseWriter, r *http.Request){
 }
 
 func crenote_page(w http.ResponseWriter, r *http.Request){    
-    tmpl, err := template.ParseFiles("../templates/crenote.html", "../templates/header.html", "../templates/footer.html" )
+    tmpl, err := template.ParseFiles("templates/crenote.html", "templates/header.html", "templates/footer.html" )
 
 	if err != nil{
 		panic(err)
@@ -867,7 +867,7 @@ func notes_page(w http.ResponseWriter, r *http.Request) {
    }
 
 	// Render the notes page
-    tmpl, err := template.ParseFiles("../templates/notes.html", "../templates/header.html", "../templates/footer.html" )
+    tmpl, err := template.ParseFiles("templates/notes.html", "templates/header.html", "templates/footer.html" )
 
 	if err != nil{
 		panic(err)
@@ -922,7 +922,7 @@ func note_page(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    tmpl, err := template.ParseFiles("../templates/note.html", "../templates/header.html", "../templates/footer.html")
+    tmpl, err := template.ParseFiles("templates/note.html", "templates/header.html", "templates/footer.html")
     if err != nil {
         http.Error(w, err.Error(), http.StatusInternalServerError)
         return
@@ -1005,7 +1005,7 @@ func editNote(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodGet {
 		// Render edit note page
-		tmpl, err := template.ParseFiles("../templates/edit-note.html", "../templates/header.html", "../templates/footer.html")
+		tmpl, err := template.ParseFiles("templates/edit-note.html", "templates/header.html", "templates/footer.html")
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return

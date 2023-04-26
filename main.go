@@ -1038,7 +1038,7 @@ func handleFunc(){
 	rtr.HandleFunc("/login", login_page).Methods("GET")
     rtr.HandleFunc("/inout", InOut).Methods("GET")
 	rtr.HandleFunc("/loginuser", login).Methods("POST")
-	rtr.HandleFunc("/register/", register_page).Methods("GET")
+	rtr.HandleFunc("/register", register_page).Methods("GET")
 	rtr.HandleFunc("/createuser", createUser).Methods("POST")
     rtr.HandleFunc("/notes", notes_page).Methods("GET")
     rtr.HandleFunc("/note/{id}", note_page).Methods("GET")
@@ -1059,7 +1059,7 @@ func handleFunc(){
     http.Handle("/", rtr)
     fs := http.FileServer(http.Dir("static"))
     http.Handle("/static/", http.StripPrefix("/static/", fs))
-    http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":0", nil)
 }
 
 func main(){

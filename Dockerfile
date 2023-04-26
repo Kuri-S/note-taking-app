@@ -11,7 +11,7 @@ COPY . .
 RUN go build -o main .
 
 # Expose port 8080 for the application
-EXPOSE 8080
+#EXPOSE 8080
 
 # Set the command to run when the container starts
 CMD ["./main"]
